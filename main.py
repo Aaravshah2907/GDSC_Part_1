@@ -135,3 +135,6 @@ with open('Leaderboard.csv', 'a+', newline='') as file:
     writer = csv.DictWriter(file, fieldnames=['date', 'time', 'name', 'score'])
     writer.writerow({'date': today_date, 'time': now_time, "name": name,
                     'score': quiz.get_score()})
+'''
+NOTE: We can even update the Leaderboad File and display the top 10 players of all time.
+'''
