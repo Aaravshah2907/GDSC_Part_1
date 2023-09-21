@@ -113,11 +113,13 @@ while quiz.do_questions_remain():
 # Display the final score
 print(f"Your final score is: {quiz.get_score()}")
 
+# Finding Current date and time using datetime module of python.
 today = datetime.datetime.now()
 today_date = today.strftime("%b-%d-%Y")
 
 now_time = today.strftime("%H:%M:%S")
 
+# Checking if Leaderboard.csv exists and if not, creating the file
 path = r'\Leaderboard.csv'
 if os.path.exists(path):
     pass
@@ -128,6 +130,7 @@ else:
         writer.writerow({'date': 'Date', 'time': "Time",
                         "name": 'Name', 'score': 'Score'})
 
+# Updating the Leaderboard file
 with open('Leaderboard.csv', 'a+', newline='') as file:
     writer = csv.DictWriter(file, fieldnames=['date', 'time', 'name', 'score'])
     writer.writerow({'date': today_date, 'time': now_time, "name": name,
